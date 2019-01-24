@@ -1,0 +1,5 @@
+/server/ebin/*.beam
+/server/ebin/*.erl
+/server/log
+/server/data
+/server/include/gen/*.hrl

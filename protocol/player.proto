@@ -1,0 +1,48 @@
+﻿//玩家
+player
+{
+	//检测token
+    check_token
+	{
+		in
+		{
+			uid   : string		//uid
+			token : string 		//登陆返回的token
+		}
+		
+		out
+		{
+			result : enum
+			{
+				SUCCESS				//成功
+				INVALID_UID			//无效uid
+				INVALID_TOKEN		//无效token
+				LOGIN_NODE_ERROR	//登陆节点连接失败
+				UNKNOW_ERROR		//未知错误
+			}
+		}
+	}
+	
+	//登陆
+	login
+	{
+		in
+		{
+			uid	 : string			//uid
+			time : int				//登陆时间
+			sign : string        	//签名(例:uid=username&time=1542083528&key=8ebe40da1fac1b1efefcb0bde484568a)
+		}
+		
+		out
+		{
+			result : enum
+			{
+				SUCCESS				//成功
+				UNCHECK_TOKEN		//未验证TOKEN
+				UNKNOW_ERROR		//未知错误
+			}
+			player_id : long 		//玩家id
+			nickname  : string 		//昵称
+		}
+	}
+}

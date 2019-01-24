@@ -1,0 +1,29 @@
+{
+	[
+		'../src/core/gen_server2/gen_server2.erl',
+		'../src/core/cowboy/cowboy_stream.erl',
+		'../src/core/cowboy/cowboy_middleware.erl',
+		'../src/core/cowboy/cowboy_sub_protocol.erl',
+		'../src/core/websocket_client/websocket_client_handler.erl',
+		'../src/core/*',
+		'../src/core/*/*',
+		'../src/core/*/*/*',
+		'../src/api/*',
+		'../src/api/*/*',
+		'../src/api/*/*/*',
+		'../src/mod/*',
+		'../src/worker/*',
+		'../src/worker/*/*',
+		'../src/worker/*/*/*',
+		'../src/gen/*',
+		'../src/gen/*/*',
+		'../src/gen/*/*/*',
+		'../src/*'
+	],
+	[
+		debug_info,
+		{d,debug},
+		{outdir,"./"},
+		{i,"../include"}
+	]
+}.

@@ -1,0 +1,62 @@
+//战斗
+fight
+{
+	//玩家基本数据
+	class player_data 
+	{
+		player_id : long	//玩家id
+		nickname  : string	//玩家昵称
+		health	  : int		//生命值
+	}
+	
+	//技能效果
+	class effect
+	{
+		effect_id		: ushort	//触发的技能效果id
+		effect_value	: int		//触发的技能效果值
+	}
+	
+	//战斗结果
+    class fight_result
+    {
+        winner_player_id	: long					//胜利玩家id
+        attack_player_data	: typeof<player_data>	//攻击者玩家数据
+        defense_player_data	: typeof<player_data>	//防御者玩家数据
+		
+		//回合列表
+        round_list : list
+        {
+			//战斗列表
+			fight_list : list
+			{
+				round_player_id	: long	//回合玩家id
+				
+				//战斗方式
+				fight_way : enum
+				{
+					WEAPON	//武器
+					ACTION	//招式
+				}
+				
+				weapon_id		: byte			//武器id
+				action_id		: byte			//招式id
+				is_hit			: bool			//是否命中
+				is_critical		: bool			//是否暴击
+				is_block		: bool			//是否档格(对方)
+				stunt_id		: byte			//使用的技能id(0-没有使用技能)
+				hurt_health		: int			//伤害血量
+				left_health		: int			//剩余血量
+				before_effect	: list<effect>	//攻击前触发技能效果列表
+				after_effect	: list<effect>	//攻击后触发技能效果列表
+				
+				//双方身上的技能效果
+				imposed_effect_list	: list
+				{
+					player_id : long	//玩家id
+					effect_id : byte	//技能效果id
+				}
+			}
+		}
+    }
+}
+	
